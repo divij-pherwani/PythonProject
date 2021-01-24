@@ -5,7 +5,7 @@
 Step 1 - Download the repository as Zip  
 Step 2 - Extract the Zip content into a folder  
 Step 3 - Open Command Prompt  
-Step 4 - Using cd naviagte to the project folder   
+Step 4 - Using cd navigate to the project folder   
 Step 5 - Run the following lines in Command Prompt   
 
 venv\Scripts\activate.bat  
