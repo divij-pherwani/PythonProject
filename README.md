@@ -1,4 +1,4 @@
-# PythonProject
+# Django Project - Python Web Application
 
 # Instructions 
 
