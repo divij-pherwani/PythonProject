@@ -17,5 +17,5 @@ python manage.py runserver
 
 Step 6 - Copy the resulting URL into a browser. For example - http://127.0.0.1:8000/  
 
-Step 7 - Close the browser, deactive the venv and close the command promt   
+Step 7 - Close the browser, deactivate the venv and close the command promt   
 
