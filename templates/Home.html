@@ -1,0 +1,53 @@
+{% extends 'Base.html' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+	<div class="col">
+		<div class="card card-body">
+<form method="get">
+
+    {{ myFilter.form }}
+  <button type="submit">Search</button>
+</form>
+        </div>
+</div>
+</div>
+    <br>
+    <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+    <table border="1" cellspacing="0" class="table table-sm">
+     <h3>List of Universities</h3>
+    <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>Number of Students</th>
+    <th>Institution Type</th>
+    <th>International Students</th>
+     <th>Link</th>
+    </tr>
+
+    {% for uni in query %}
+    <tr>
+    <td>{{ uni.uni_rank }}</td>
+    <td>{{ uni.uni_name }}</td>
+    <td>{{ uni.uni_city }}</td>
+    <td>{{ uni.uni_studentNumber }}</td>
+    <td>{{ uni.uni_type }}</td>
+    <td>{{ uni.uni_intStudents }}</td>
+    <td><a href="{% url 'university' uni.uni_id %}">View</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>
+</div>
+</div>
+</div>
+{% endblock %}

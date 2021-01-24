@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+   <p align="left">
+ {% if user.is_authenticated %}
+    &nbsp;&nbsp;&nbsp;&nbsp;Hi {{ user.username }}!
+ </p>
+    <p align="right"><a href="{% url 'logout' %}">Log Out</a>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <br/>
+    {% endif %}
+    <main>
+<h1>Students Interested in University of Warsaw</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+    <th>Student Name</th>
+    <th>Course Name</th>
+     <th>Remove</th>
+    </tr>
+
+    {% for q in query %}
+    <tr>
+   <td>{{ q.student_name }}</td>
+    <td>{{ q.course_name}}</td>
+    <td><a href="{% url 'delete' q.id %}">Remove</a></td>
+    </tr>
+    {% endfor %}
+</main>
+</body>
+</html>

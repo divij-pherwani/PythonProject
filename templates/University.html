@@ -1,0 +1,46 @@
+{% extends 'Base.html' %}
+
+
+{% block title %}University{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+
+    <h1>University Detail</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+    <th>University Name</th>
+    <th>Course Name</th>
+    <th>Course Type</th>
+    <th>Course Duration</th>
+    <th>Course Tuition</th>
+     <th>Wishlist</th>
+    </tr>
+
+    {% for q in query %}
+    <tr>
+    <td>{{ q.uni_name }}</td>
+    <td>{{ q.course_name}}</td>
+    <td>{{ q.course_type }}</td>
+    <td>{{ q.course_duration }}</td>
+    <td>{{ q.course_tuition }}</td>
+     <td><a href="{% url 'add' q.course_id %}">Add</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}

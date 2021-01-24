@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    li { background-color: indianred;}
+</style>
+    <meta charset="UTF-8">
+    <title>{% block title %}Python Project{% endblock %}</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <main>
+
+       {% if messages %}
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+   <p align="left">
+ {% if user.is_authenticated %}
+    &nbsp;&nbsp;&nbsp;&nbsp;Hi {{ user.username }}!
+ </p>
+    <p align="right"><a href="{% url 'logout' %}">Log Out</a>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <br/>
+
+{% endif %}
+&nbsp;&nbsp;&nbsp;&nbsp;
+  <a  href="{% url 'home' %}">Home</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="{% url 'universityE' %}">University</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+      <a  href="{% url 'dashboard' %}">Dashboard</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+      <a  href="{% url 'profile' %}">My Profile</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{% url 'about' %}">About</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{% url 'contact' %}">Contact</a>
+    <br/>
+    <br/>
+
+    {% block content %}
+
+    {% endblock %}
+
+  </main>
+</body>
+</html>

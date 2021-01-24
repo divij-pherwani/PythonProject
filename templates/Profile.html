@@ -1,0 +1,65 @@
+{% extends 'Base.html' %}
+
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+    <h1>Profile Detail</h1>
+    {% for q in query %}
+    <table border="1" width="600">
+    <tr>
+    <td>Student Name</td>
+    <td>{{ q.student_name }}</td>
+    </tr>
+    <tr>
+    <td>Student DOB</td>
+     <td>{{ q.student_dob }}</td>
+    </tr>
+        <tr>
+    <td>Student Gender</td>
+     <td>{{ q.student_gender }}</td>
+     </tr>
+        <tr>
+            <td>Student Qualification</td>
+     <td>{{ q.student_qualification }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</div>
+    </div>
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+    <h1>My Wishlist</h1>
+    <table border="1" width="600">
+    <tr>
+    <td>Program Name</td>
+    <td>University Name</td>
+    <td>Wishlist</td>
+    </tr>
+
+    {% for q in query2 %}
+    <tr>
+    <td>{{ q.course_id}}</td>
+    <td>{{ q.uni_id }}</td>
+    <td><a href="{% url 'delete' q.id %}">Remove</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+<br>
+
+</div>
+    </div>
+</div>
+
+{% endblock %}

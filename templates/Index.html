@@ -1,0 +1,14 @@
+{% extends 'Base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://media.istockphoto.com/vectors/welcome-to-poland-vector-id641364634?k=6&m=641364634&s=170667a&w=0&h=9U4ZfrhT6DepirzEAlOPY-rdHEDgPfrnpW4YBgfDNPk=" alt="Welcome">
+    <a href="https://media.istockphoto.com/vectors/welcome-to-poland-vector-id641364634?k=6&m=641364634&s=170667a&w=0&h=9U4ZfrhT6DepirzEAlOPY-rdHEDgPfrnpW4YBgfDNPk=">Image Source</a>
+ <p>
+    {% if not user.is_authenticated %}
+   &nbsp;&nbsp;&nbsp;&nbsp;  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+    </p>
+{% endblock %}

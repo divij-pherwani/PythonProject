@@ -1,0 +1,112 @@
+{% extends 'Base.html' %}
+
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+    <h1>Cheapest Program</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+    <th>Program Name</th>
+    <th>University Name</th>
+    <th>Study Level</th>
+    <th>Course Tuition</th>
+    </tr>
+    {% for q in query1 %}
+    <tr>
+    <td>{{ q.course_name}}</td>
+    <td>{{ q.uni_name }}</td>
+    <td>{{ q.course_type }}</td>
+    <td>{{ q.course_tuition }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</div>
+    </div>
+</div>
+
+<br>
+    <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+    <h1>Most Expensive Programs</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+    <th>Program Name</th>
+    <th>University Name</th>
+    <th>Study Level</th>
+    <th>Course Tuition</th>
+    </tr>
+
+    {% for q in query2 %}
+    <tr>
+    <td>{{ q.course_name}}</td>
+    <td>{{ q.uni_name }}</td>
+    <td>{{ q.course_type }}</td>
+    <td>{{ q.course_tuition }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</div>
+    </div>
+    </div>
+<br>
+    <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+      <h1>Biggest University by Student Size</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+
+    <th>University Name</th>
+    <th>Number of Student</th>
+    </tr>
+
+    {% for q in query3 %}
+
+    <tr>
+    <td>{{ q.uni_name }}</td>
+    <td>{{ q.uni_studentNumber }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+    </div>
+    </div>
+    </div>
+<br>
+      <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+    <h1>Most Popular International University</h1>
+    <table border="1" cellspacing="0" class="table table-sm">
+    <tr>
+    <th>University Name</th>
+    <th>International Student %</th>
+    </tr>
+
+    {% for q in query4 %}
+    <tr>
+    <td>{{ q.uni_name }}</td>
+    <td>{{ q.uni_intStudents }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+</div>
+    </div>
+      </div>
+
+<br>
+
+
+
+{% endblock %}
