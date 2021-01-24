@@ -14,6 +14,7 @@ def index_view(request):
     return render(request, 'Index.html')
 
 
+@login_required(login_url='login')
 def staff_view(request):
     query = ApplicationDetail.objects.raw('SELECT A.id, D.course_name, B.uni_name, C.user_id, C.student_name  FROM WebApp_applicationdetail A JOIN WebApp_universitydetail B ON A.uni_id_id = B.uni_id JOIN WebApp_studentdetail C ON A.student_id_id = C.user_id JOIN WebApp_coursename D ON D.course_id = A.course_id_id WHERE A.uni_id_id = 111;')
     return render(request, 'Staff.html', {'query':query} )
